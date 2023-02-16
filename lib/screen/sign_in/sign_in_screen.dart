@@ -20,7 +20,11 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   TextEditingController dateinput = TextEditingController();
   bool _isHidden = true;
-
+  var maskFormatter = new MaskTextInputFormatter(
+      mask: '+# (###) ###-##-##',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
   @override
   void initState() {
     super.initState();
@@ -116,6 +120,7 @@ Column passwordItem(String text, bool isHidden, Function() onTap) {
           right: 22,
         ),
         child: TextFormField(
+          TextField(inputFormatters: [maskFormatter])
           obscureText: isHidden,
           cursorColor: StaticColors.primaryRedColor,
           decoration: InputDecoration(
