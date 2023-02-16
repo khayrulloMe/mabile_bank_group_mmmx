@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_up/sign_up_screen.dart';
 import 'package:mabile_bank_group_mmmx/utils/style_static.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const SignUpScreen(),
     );
   }
 }
