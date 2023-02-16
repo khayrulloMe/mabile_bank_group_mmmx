@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mabile_bank_group_mmmx/utils/style_static.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: "Manrope",
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
@@ -52,13 +54,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
-              style: GoogleFonts.manrope(
-                  textStyle: const TextStyle(
+              style: TextStyle(
+
+                    color: StaticColors.secondaryRedColor,
                 fontSize: 24,
-                fontWeight: FontWeight.normal,
-              )),
+                fontWeight: FontWeight.bold,
+              ),
             ),
             Text(
               '$_counter',
@@ -68,9 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: StaticColors.primaryRedColor,
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add,color: StaticColors.secondaryWhiteColor,),
       ),
     );
   }
