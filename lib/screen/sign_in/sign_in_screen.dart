@@ -41,7 +41,7 @@ class _SignInState extends State<SignIn> {
           children: [
             const Center(
                 child: Text(
-              "Sign Up",
+              "Sign In",
               style: TextStyle(
                   color: StaticColors.secondaryRedColor,
                   fontSize: 24,
@@ -50,7 +50,7 @@ class _SignInState extends State<SignIn> {
             Expanded(
               child: Column(
                 children: [
-                  signItem("First name"),
+                  signItem("Phone number"),
                   passwordItem("Password", _isHidden, _togglePasswordView),
                 ],
               ),
