@@ -23,6 +23,7 @@ class SplashBackground extends StatelessWidget {
         children: [
           Lottie.asset('assets/res/new_anim.json'),
         ],
+          )
       ),
     );
   }
