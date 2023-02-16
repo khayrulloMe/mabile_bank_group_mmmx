@@ -13,7 +13,7 @@ class StaticStyles {
 
 class StaticColors {
   static const Color primaryRedColor = Color.fromARGB(255, 128, 0, 49);
-  static const Color secondaryRedColor  =  Color.fromARGB(179, 141, 0, 55);
+  static const Color secondaryRedColor  =  Color.fromARGB(189, 146, 4, 59);
   static const Color primaryWhiteColor = Color.fromARGB(255, 245, 247, 246);
   static const Color secondaryWhiteColor = Color.fromARGB(255, 255, 255, 255);
 }
