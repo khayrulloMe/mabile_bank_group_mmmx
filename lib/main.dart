@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mabile_bank_group_mmmx/screen/intro/intro_screen.dart';
-import 'package:mabile_bank_group_mmmx/screen/splash/splash_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
