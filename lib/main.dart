@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:mabile_bank_group_mmmx/screen/intro/intro_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       home: SplashScreen(),
       routes: {
-        IntroScreen.id:(context)=>const IntroScreen(),
+        IntroScreen.root:(context)=>const IntroScreen(),
       },
     );
   }

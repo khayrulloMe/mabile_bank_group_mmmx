@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/splash/widgets/rgbbackground.dart';
 
 import '../intro/intro_screen.dart';
 
@@ -24,18 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Builder(
         builder: (context) {
-          return Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color.fromARGB(179, 141, 0, 55),
-                    Color.fromARGB(255, 128, 0, 49),
-                  ]
-              )
-            ),
-          );
+          return SplashBackground();
         }
       ),
     );
@@ -43,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   nextScreen(BuildContext context) async{
     Timer.periodic(Duration(seconds: 3), (timer) {
-      Navigator.pushReplacementNamed(context, IntroScreen.id);
+      Navigator.pushReplacementNamed(context, IntroScreen.root);
     });
   }
 }
