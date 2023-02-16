@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mabile_bank_group_mmmx/screen/sign_up/sign_up_screen.dart';
 import 'package:mabile_bank_group_mmmx/utils/style_static.dart';
 
 void main() {
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: "Manrope",
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const SignUpScreen(),
+      home: const SplashScreen(),
+      routes: {
+        SignInVerifyScreen.route:(context)=>const SignInVerifyScreen(),
+        HomeScreen.route:(context)=>const HomeScreen(),
+        IntroScreen.root:(context)=>const IntroScreen(),
+      },
     );
   }
 }
@@ -47,9 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.title,
-        ),
+        title: Text(widget.title),
       ),
       body: Center(
         child: Column(
@@ -57,12 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
-              style: TextStyle(
-
-                    color: StaticColors.secondaryRedColor,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
             ),
             Text(
               '$_counter',
@@ -72,10 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: StaticColors.primaryRedColor,
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add,color: StaticColors.secondaryWhiteColor,),
+        child: const Icon(Icons.add),
       ),
     );
   }
