@@ -31,9 +31,10 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  nextScreen(BuildContext context) async{
-    Timer.periodic(Duration(seconds: 3), (timer) {
+  nextScreen(BuildContext context){
+    Timer.periodic(Duration(seconds: 5), (timer) {
       Navigator.pushReplacementNamed(context, IntroScreen.root);
     });
   }
+
 }

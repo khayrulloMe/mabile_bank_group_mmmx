@@ -42,7 +42,6 @@ class _IntroScreenState extends State<IntroScreen> {
                       ),
                     ),
                   ),
-
                 ],
               ),
             )

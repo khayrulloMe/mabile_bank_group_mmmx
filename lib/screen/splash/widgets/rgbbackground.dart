@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashBackground extends StatelessWidget {
   const SplashBackground({Key? key}) : super(key: key);
@@ -6,6 +7,8 @@ class SplashBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
+      width: double.infinity,
       decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topRight,
@@ -16,6 +19,13 @@ class SplashBackground extends StatelessWidget {
               ]
           )
       ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Lottie.asset('assets/res/new_anim.json'),
+        ],
+      )
     );
   }
 }
