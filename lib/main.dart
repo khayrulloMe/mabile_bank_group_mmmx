@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/intro/intro_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen(),
+      routes: {
+        IntroScreen.root:(context)=>const IntroScreen(),
+      },
     );
   }
 }
