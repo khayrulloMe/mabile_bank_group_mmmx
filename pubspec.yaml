@@ -14,6 +14,7 @@ dependencies:
   dio: ^5.0.0
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.3
+  flutter_otp_text_field: ^1.1.1
   dependencies:
   lottie: ^2.2.0
 

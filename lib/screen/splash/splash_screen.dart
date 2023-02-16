@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in_verify/sign_in_verify.dart';
 import 'package:mabile_bank_group_mmmx/screen/splash/widgets/rgbbackground.dart';
 
 import '../intro/intro_screen.dart';
