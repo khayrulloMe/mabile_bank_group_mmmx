@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in/sign_in_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in_verify/sign_in_verify.dart';
 import 'package:mabile_bank_group_mmmx/screen/splash/widgets/rgbbackground.dart';
 
 import '../intro/intro_screen.dart';
@@ -24,16 +26,15 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Builder(
-        builder: (context) {
-          return SplashBackground();
-        }
+          builder: (context) {
+            return const SplashBackground();
+          }
       ),
     );
   }
 
-  nextScreen(BuildContext context) async{
-    Timer.periodic(Duration(seconds: 3), (timer) {
-      Navigator.pushReplacementNamed(context, IntroScreen.root);
+ void nextScreen(BuildContext context) async {
+    Timer.periodic(const Duration(seconds: 5), (timer) {
+      Navigator.pushReplacementNamed(context, IntroScreen.route);
     });
-  }
-}
+  }}

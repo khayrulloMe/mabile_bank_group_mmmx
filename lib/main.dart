@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mabile_bank_group_mmmx/screen/home/home_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/intro/intro_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in/sign_in_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in_verify/sign_in_verify.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_up/sign_up_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/splash/splash_screen.dart';
 import 'package:mabile_bank_group_mmmx/utils/style_static.dart';
 
 void main() {
@@ -19,11 +25,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: SplashScreen(),
       routes: {
         SignInVerifyScreen.route:(context)=>const SignInVerifyScreen(),
         HomeScreen.route:(context)=>const HomeScreen(),
-        IntroScreen.root:(context)=>const IntroScreen(),
+        IntroScreen.route:(context)=>const IntroScreen(),
+        SignInScreen.route:(context)=>const SignInScreen(),
+        SignUpScreen.route:(context)=>const SignUpScreen(),
       },
     );
   }

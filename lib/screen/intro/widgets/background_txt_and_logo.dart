@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mabile_bank_group_mmmx/utils/style_static.dart';
 
 class Background_Txt_Logo extends StatelessWidget {
   const Background_Txt_Logo({Key? key}) : super(key: key);
@@ -13,8 +14,9 @@ class Background_Txt_Logo extends StatelessWidget {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Color.fromARGB(179, 141, 0, 55),
-                Color.fromARGB(255, 128, 0, 49),
+                StaticColors.primaryRedColor,
+                StaticColors.primaryRedColor,
+
               ])),
       child: Center(
         child: Column(

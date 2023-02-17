@@ -4,7 +4,7 @@ import 'package:mabile_bank_group_mmmx/screen/intro/widgets/background_txt_and_l
 import 'package:mabile_bank_group_mmmx/screen/intro/widgets/language_btn.dart';
 
 class IntroScreen extends StatefulWidget {
-  static const root = "intro";
+  static const route = "intro";
 
   const IntroScreen({Key? key}) : super(key: key);
 
@@ -51,4 +51,5 @@ class _IntroScreenState extends State<IntroScreen> {
       }),
     );
   }
+
 }

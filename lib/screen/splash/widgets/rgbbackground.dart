@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:lottie/lottie.dart';
+import 'package:mabile_bank_group_mmmx/utils/style_static.dart';
 
 class SplashBackground extends StatelessWidget {
   const SplashBackground({Key? key}) : super(key: key);
@@ -11,11 +13,19 @@ class SplashBackground extends StatelessWidget {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Color.fromARGB(179, 141, 0, 55),
-                Color.fromARGB(255, 128, 0, 49),
+              StaticColors.secondaryRedColor,
+                StaticColors.primaryRedColor,
               ]
-          )
+          ),
       ),
-    );
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Lottie.asset('assets/res/new_anim.json'),
+        ],
+          ),
+      );
+
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in/sign_in_screen.dart';
 
 class LanguageBtn extends StatelessWidget {
   String country="";
@@ -11,7 +12,7 @@ class LanguageBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-
+        Navigator.pushReplacementNamed(context, SignInScreen.route);
       },
       child: Container(
         margin: const EdgeInsets.all(10),

@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_up/sign_up_screen.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../../utils/style_static.dart';
 
 class SignInScreen extends StatelessWidget {
+  static const String route = "sign_in";
+
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const SignIn();
   }
+
+
 }
 
 class SignIn extends StatefulWidget {
@@ -15,12 +21,14 @@ class SignIn extends StatefulWidget {
 
   @override
   State<SignIn> createState() => _SignInState();
+
+
 }
 
 class _SignInState extends State<SignIn> {
   TextEditingController dateinput = TextEditingController();
   bool _isHidden = true;
-  var maskFormatter = new MaskTextInputFormatter(
+  var maskFormatter =  MaskTextInputFormatter(
       mask: '+# (###) ###-##-##',
       filter: { "#": RegExp(r'[0-9]') },
       type: MaskAutoCompletionType.lazy
@@ -46,10 +54,7 @@ class _SignInState extends State<SignIn> {
             const Center(
                 child: Text(
               "Sign In",
-              style: TextStyle(
-                  color: StaticColors.secondaryRedColor,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
+              style: TextStyle(color: StaticColors.secondaryRedColor, fontSize: 24, fontWeight: FontWeight.bold),
             )),
             Expanded(
               child: Column(
@@ -59,7 +64,7 @@ class _SignInState extends State<SignIn> {
                 ],
               ),
             ),
-            buttonItem()
+            buttonItem(context)
           ],
         ),
       ),
@@ -68,6 +73,13 @@ class _SignInState extends State<SignIn> {
 }
 
 Column signItem(String text) {
+
+  var maskFormatter = new MaskTextInputFormatter(
+      mask: '+ (998) (##) ###-##-##',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
+
   return Column(
     children: [
       const SizedBox(
@@ -87,14 +99,12 @@ Column signItem(String text) {
           right: 22,
         ),
         child: TextFormField(
+          keyboardType: TextInputType.phone,
+          inputFormatters: [maskFormatter],
           cursorColor: StaticColors.primaryRedColor,
           decoration: const InputDecoration(
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(14)),
-                borderSide:
-                    BorderSide(color: StaticColors.primaryRedColor, width: 2)),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(14))),
+            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(14)), borderSide: BorderSide(color: StaticColors.primaryRedColor, width: 2)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(14))),
             focusColor: StaticColors.primaryRedColor,
             hintText: ' ',
           ),
@@ -120,29 +130,12 @@ Column passwordItem(String text, bool isHidden, Function() onTap) {
           right: 22,
         ),
         child: TextFormField(
-          TextField(inputFormatters: [maskFormatter])
-          obscureText: isHidden,
           cursorColor: StaticColors.primaryRedColor,
-          decoration: InputDecoration(
-            focusedBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(14)),
-                borderSide:
-                    BorderSide(color: StaticColors.primaryRedColor, width: 2)),
-            border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(14))),
+          decoration: const InputDecoration(
+            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(14)), borderSide: BorderSide(color: StaticColors.primaryRedColor, width: 2)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(14))),
             focusColor: StaticColors.primaryRedColor,
             hintText: ' ',
-            suffix: InkWell(
-              onTap: onTap,
-              child: Container(
-                margin: const EdgeInsets.only(
-                  right: 16,
-                ),
-                child: Icon(
-                  isHidden ? Icons.visibility_off : Icons.visibility,
-                ),
-              ),
-            ),
           ),
         ),
       ),
@@ -150,33 +143,44 @@ Column passwordItem(String text, bool isHidden, Function() onTap) {
   );
 }
 
-Column buttonItem() {
-  return Column(
-    children: [
-      const SizedBox(
-        height: 12,
-      ),
-      Container(
-        width: double.infinity,
-        height: 52,
-        margin: const EdgeInsets.only(
-          left: 22,
-          right: 22,
+GestureDetector buttonItem(BuildContext context) {//Navigator.pushReplacementNamed(context, IntroScreen.route);
+  return GestureDetector(
+    onTap: (){
+      Navigator.pushReplacementNamed(context, SignUpScreen.route);
+    },
+    child: Column(
+      children: [
+        const SizedBox(
+          height: 12,
         ),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-          color: StaticColors.primaryRedColor,
+        Container(
+          width: double.infinity,
+          height: 52,
+          margin: const EdgeInsets.only(
+            left: 22,
+            right: 22,
+          ),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            color: StaticColors.primaryRedColor,
+          ),
+          child: const Center(
+              child: Text(
+            'Enter',
+            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          )),
         ),
-        child: const Center(
-            child: Text(
-          'Enter',
-          style: TextStyle(
-              color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-        )),
-      ),
-      const SizedBox(
-        height: 24,
-      )
-    ],
+        const SizedBox(
+          height: 24,
+        )
+
+
+      ],
+    ),
+
   );
+
+
 }
+
+
