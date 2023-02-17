@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mabile_bank_group_mmmx/screen/sign_up/sign_up_screen.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../../utils/style_static.dart';
+import '../sign_up/sign_up_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   static const String route = "sign_in";
@@ -74,7 +74,7 @@ class _SignInState extends State<SignIn> {
 
 Column signItem(String text) {
 
-  var maskFormatter = new MaskTextInputFormatter(
+  var maskFormatter = MaskTextInputFormatter(
       mask: '+ (998) (##) ###-##-##',
       filter: { "#": RegExp(r'[0-9]') },
       type: MaskAutoCompletionType.lazy
