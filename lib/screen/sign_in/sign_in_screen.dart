@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_up/sign_up_screen.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../../utils/style_static.dart';
 
@@ -11,6 +12,8 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SignIn();
   }
+
+
 }
 
 class SignIn extends StatefulWidget {
@@ -18,6 +21,8 @@ class SignIn extends StatefulWidget {
 
   @override
   State<SignIn> createState() => _SignInState();
+
+
 }
 
 class _SignInState extends State<SignIn> {
@@ -59,7 +64,7 @@ class _SignInState extends State<SignIn> {
                 ],
               ),
             ),
-            buttonItem()
+            buttonItem(context)
           ],
         ),
       ),
@@ -68,6 +73,13 @@ class _SignInState extends State<SignIn> {
 }
 
 Column signItem(String text) {
+
+  var maskFormatter = new MaskTextInputFormatter(
+      mask: '+ (998) (##) ###-##-##',
+      filter: { "#": RegExp(r'[0-9]') },
+      type: MaskAutoCompletionType.lazy
+  );
+
   return Column(
     children: [
       const SizedBox(
@@ -87,6 +99,8 @@ Column signItem(String text) {
           right: 22,
         ),
         child: TextFormField(
+          keyboardType: TextInputType.phone,
+          inputFormatters: [maskFormatter],
           cursorColor: StaticColors.primaryRedColor,
           decoration: const InputDecoration(
             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(14)), borderSide: BorderSide(color: StaticColors.primaryRedColor, width: 2)),
@@ -115,38 +129,58 @@ Column passwordItem(String text, bool isHidden, Function() onTap) {
           left: 22,
           right: 22,
         ),
-        child: TextFormField(),
+        child: TextFormField(
+          cursorColor: StaticColors.primaryRedColor,
+          decoration: const InputDecoration(
+            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(14)), borderSide: BorderSide(color: StaticColors.primaryRedColor, width: 2)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(14))),
+            focusColor: StaticColors.primaryRedColor,
+            hintText: ' ',
+          ),
+        ),
       ),
     ],
   );
 }
 
-Column buttonItem() {
-  return Column(
-    children: [
-      const SizedBox(
-        height: 12,
-      ),
-      Container(
-        width: double.infinity,
-        height: 52,
-        margin: const EdgeInsets.only(
-          left: 22,
-          right: 22,
+GestureDetector buttonItem(BuildContext context) {//Navigator.pushReplacementNamed(context, IntroScreen.route);
+  return GestureDetector(
+    onTap: (){
+      Navigator.pushReplacementNamed(context, SignUpScreen.route);
+    },
+    child: Column(
+      children: [
+        const SizedBox(
+          height: 12,
         ),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-          color: StaticColors.primaryRedColor,
+        Container(
+          width: double.infinity,
+          height: 52,
+          margin: const EdgeInsets.only(
+            left: 22,
+            right: 22,
+          ),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            color: StaticColors.primaryRedColor,
+          ),
+          child: const Center(
+              child: Text(
+            'Enter',
+            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          )),
         ),
-        child: const Center(
-            child: Text(
-          'Enter',
-          style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-        )),
-      ),
-      const SizedBox(
-        height: 24,
-      )
-    ],
+        const SizedBox(
+          height: 24,
+        )
+
+
+      ],
+    ),
+
   );
+
+
 }
+
+

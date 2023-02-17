@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in_verify/sign_in_verify.dart';
 import 'package:mabile_bank_group_mmmx/utils/style_static.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpScreen extends StatefulWidget {
+  static final  route= "signupscreen";
   const SignUpScreen({Key? key}) : super(key: key);
 
   @override
@@ -17,7 +19,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   int id = 1;
   String? gender;
   final dayFormater = MaskTextInputFormatter(mask: "## / ## / ####");
-  final phoneFormater = MaskTextInputFormatter(mask: " +998 - " + "## - ### - ## - ##");
 
   var maskFormatter = new MaskTextInputFormatter(
       mask: '+ (998) (##) ###-##-##',
@@ -283,25 +284,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     const SizedBox(
                       height: 12,
                     ),
-                    Container(
-                      width: double.infinity,
-                      height: 52,
-                      margin: const EdgeInsets.only(
-                        left: 22,
-                        right: 22,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pushReplacementNamed(context, SignInVerifyScreen.route);
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 52,
+                        margin: const EdgeInsets.only(
+                          left: 22,
+                          right: 22,
+                        ),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                          color: StaticColors.primaryRedColor,
+                        ),
+                        child: const Center(
+                            child: Text(
+                          'Continue',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        )),
                       ),
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                        color: StaticColors.primaryRedColor,
-                      ),
-                      child: const Center(
-                          child: Text(
-                        'Continue',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                      )),
                     ),
                     const SizedBox(
                       height: 24,
