@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mabile_bank_group_mmmx/screen/sign_in/sign_in_screen.dart';
 import 'package:mabile_bank_group_mmmx/screen/sign_in_verify/sign_in_verify.dart';
 import 'package:mabile_bank_group_mmmx/screen/splash/widgets/rgbbackground.dart';
 
@@ -34,6 +35,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
  void nextScreen(BuildContext context) async {
     Timer.periodic(const Duration(seconds: 5), (timer) {
-      Navigator.pushReplacementNamed(context, IntroScreen.root);
+      Navigator.pushReplacementNamed(context, SignInScreen.route);
     });
   }}
