@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mabile_bank_group_mmmx/screen/home/bottom_nav.dart';
 import 'package:mabile_bank_group_mmmx/screen/home/home_screen.dart';
+import 'package:mabile_bank_group_mmmx/screen/home_ali/loans.dart';
 import 'package:mabile_bank_group_mmmx/screen/intro/intro_screen.dart';
 import 'package:mabile_bank_group_mmmx/screen/sign_in/sign_in_screen.dart';
 import 'package:mabile_bank_group_mmmx/screen/sign_in_verify/sign_in_verify.dart';
@@ -22,16 +24,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        dividerColor: Colors.transparent,
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home:     const  SplashScreen()  ,// const SplashScreen(),
       routes: {
         SignInVerifyScreen.route:(context)=>const SignInVerifyScreen(),
         HomeScreen.route:(context)=>const HomeScreen(),
         IntroScreen.route:(context)=>const IntroScreen(),
         SignInScreen.route:(context)=>const SignInScreen(),
         SignUpScreen.route:(context)=>const SignUpScreen(),
+        BottomNavigation.route:(context)=>const BottomNavigation()
       },
     );
   }

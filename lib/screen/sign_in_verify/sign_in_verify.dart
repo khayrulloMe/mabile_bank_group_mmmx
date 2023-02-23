@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mabile_bank_group_mmmx/screen/home/home_screen.dart';
 import 'package:mabile_bank_group_mmmx/screen/sign_in_verify/widgets.dart';
 
+import '../home/bottom_nav.dart';
+
 class SignInVerifyScreen extends StatelessWidget {
   static const String route = "sign_in_verify";
 
@@ -23,7 +25,7 @@ class SignInVerifyScreen extends StatelessWidget {
             VerifyCodeTextField(
               onSubmit: (String val) {
                 if(val.length==6){
-                  Navigator.pushReplacementNamed(context, HomeScreen.route);
+                  Navigator.pushReplacementNamed(context, BottomNavigation.route);
                 }
               },
             ),

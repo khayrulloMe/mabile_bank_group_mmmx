@@ -20,6 +20,7 @@ dependencies:
   flutter_otp_text_field: ^1.1.1
   dependencies:
   lottie: ^2.2.0
+  expandable: ^5.0.1
 
 dev_dependencies:
   flutter_test:
